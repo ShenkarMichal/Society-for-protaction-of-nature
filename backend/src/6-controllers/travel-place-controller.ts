@@ -14,4 +14,16 @@ router.get("/area", async (request: Request, response: Response, next: NextFunct
     }
 })
 
+//Get travel place by areaID
+router.get("/travel-place-by-areaID/:areaID", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const areaID = +request.params.areaID
+        const travelPlace = await travelPlaceLogic.getPlaceByAreaID(areaID)
+        response.json(travelPlace)
+    } 
+    catch (err: any) {
+        next(err)  
+    }
+})
+
 export default router
