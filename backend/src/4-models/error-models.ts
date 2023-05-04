@@ -7,3 +7,9 @@ export class RouteNotFoundErrorModel extends ErrorModel {
         super(404, `The route ${route} is not exists`)
     }
 }
+
+export class ResourceNotFoundErrorModel extends ErrorModel {
+    public constructor (id: number) {
+        super(404, `The id: ${id} is not exists`)
+    }
+}

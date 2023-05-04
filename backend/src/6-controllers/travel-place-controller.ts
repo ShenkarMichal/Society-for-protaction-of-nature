@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response } from 'express'
 import travelPlaceLogic from '../5-logics/travel-place-logic'
+import TravelPlaceModel from '../4-models/travel-place-model'
 
 const router = express.Router()
 
@@ -20,6 +21,30 @@ router.get("/travel-place-by-areaID/:areaID", async (request: Request, response:
         const areaID = +request.params.areaID
         const travelPlace = await travelPlaceLogic.getPlaceByAreaID(areaID)
         response.json(travelPlace)
+    } 
+    catch (err: any) {
+        next(err)  
+    }
+})
+
+//Add travel place
+router.post("/travel-place", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const travelPlace = new TravelPlaceModel(request.body)
+        const addedTravelPlace = await travelPlaceLogic.addTravelPlace(travelPlace)
+        response.status(201).json(addedTravelPlace)
+    } 
+    catch (err: any) {
+        next(err)  
+    }
+})
+
+//Delete travel-place
+router.delete("/travel-place/:travelPlaceID", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const travelPlaceID = +request.params.travelPlaceID
+        await travelPlaceLogic.deleteTravelPlace(travelPlaceID)
+        response.sendStatus(204)
     } 
     catch (err: any) {
         next(err)  

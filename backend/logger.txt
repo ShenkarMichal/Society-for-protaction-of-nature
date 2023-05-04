@@ -1,3 +1,7 @@
 Tue Apr 25 2023 14:20:33 GMT+0300 (שעון ישראל (קיץ)) 
  The route /api/area is not exists 
+ ------------Thu May 04 2023 09:52:21 GMT+0300 (שעון ישראל (קיץ)) 
+ The route /api/travel-place/7 is not exists 
+ ------------Thu May 04 2023 09:52:50 GMT+0300 (שעון ישראל (קיץ)) 
+ The id: 7 is not exists 
  ------------
