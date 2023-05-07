@@ -52,13 +52,13 @@ async function addTravelPlace(travelPlace:TravelPlaceModel): Promise<TravelPlace
         const extention = travelPlace.image.name.substring(travelPlace.image.name.lastIndexOf("."))
         travelPlace.imageName = uuid() + extention
         await travelPlace.image.mv("./src/1-assets/images/" + travelPlace.imageName)
+        delete travelPlace.image
     }
     const sql = `INSERT INTO travelplace
                 VALUES(DEFAULT, ?, ?,?, ?, ?, ?,?)`                   
     const info: OkPacket = await dal.execute(sql, [travelPlace.areaID, travelPlace.name,travelPlace.description,
                                                     travelPlace.priceOfChild, travelPlace.priceOfAdult, travelPlace.discount, travelPlace?.imageName])
     travelPlace.travelPlaceID = info.insertId
-    delete travelPlace.image
     return travelPlace    
 }
 

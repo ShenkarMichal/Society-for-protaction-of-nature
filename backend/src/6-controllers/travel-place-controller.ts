@@ -66,8 +66,8 @@ router.get("/travel-place-by-areaID/:areaID", async (request: Request, response:
 
 //Add travel place
 router.post("/travel-place", async (request: Request, response: Response, next: NextFunction)=>{
-    try {        
-        request.body.image = request.body.files?.image
+    try {   
+        request.body.image = request.files?.image
         const travelPlace = new TravelPlaceModel(request.body)
         const addedTravelPlace = await travelPlaceLogic.addTravelPlace(travelPlace)
         response.status(201).json(addedTravelPlace)

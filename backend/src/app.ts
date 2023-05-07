@@ -1,4 +1,5 @@
 import express from 'express' 
+import expressFileUpLoad from 'express-fileupload'
 import routeNotFound from './3-middlewares/route-not-found'
 import catchAll from './3-middlewares/catch-all'
 import appConfig from './2-utils/app-config'
@@ -8,6 +9,8 @@ import cors from 'cors'
 const server = express()
 server.use(cors())
 server.use(express.json())
+
+server.use(expressFileUpLoad())
 
 server.use("/api", travelPlaceController )
 server.use("*", routeNotFound)

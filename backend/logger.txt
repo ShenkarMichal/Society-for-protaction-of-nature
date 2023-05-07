@@ -70,4 +70,40 @@ Tue Apr 25 2023 14:20:33 GMT+0300 (שעון ישראל (קיץ))
  undefined 
  ------------Sun May 07 2023 21:43:51 GMT+0300 (שעון ישראל (קיץ)) 
  undefined 
+ ------------Sun May 07 2023 22:25:53 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:27:21 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:42:13 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:47:05 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:50:11 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:50:36 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:54:15 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:55:20 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:56:28 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:56:54 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 22:57:58 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'imageName' cannot be null 
+ ------------Sun May 07 2023 22:58:58 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 23:04:40 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 23:05:26 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 23:06:33 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 23:43:10 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'imageName' cannot be null 
+ ------------Sun May 07 2023 23:48:53 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Sun May 07 2023 23:50:05 GMT+0300 (שעון ישראל (קיץ)) 
+ Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
  ------------
