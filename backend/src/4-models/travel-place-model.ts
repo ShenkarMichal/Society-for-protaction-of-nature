@@ -1,3 +1,4 @@
+import { UploadedFile } from "express-fileupload"
 
 class TravelPlaceModel {
     public travelPlaceID: number
@@ -7,6 +8,8 @@ class TravelPlaceModel {
     public priceOfChild: number
     public priceOfAdult: number
     public discount: number
+    public imageName: string
+    public image: UploadedFile
 
     public constructor(travelPlace: TravelPlaceModel) {
         this.travelPlaceID = travelPlace.travelPlaceID
@@ -16,6 +19,8 @@ class TravelPlaceModel {
         this.priceOfChild = travelPlace.priceOfChild
         this.priceOfAdult = travelPlace.priceOfAdult
         this.discount = travelPlace.discount
+        this.imageName = travelPlace.imageName
+        this.image = travelPlace.image
     }
 }
 
