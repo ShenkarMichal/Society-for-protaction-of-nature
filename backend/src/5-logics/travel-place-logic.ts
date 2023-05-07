@@ -18,6 +18,16 @@ async function getAllArea(): Promise<AreaModel[]> {
     return area    
 }
 
+async function getSpecificTravelPlace(travelPlaceID: number): Promise<TravelPlaceModel> {
+    const sql = `SELECT T.*, A.areaName 
+                FROM travelplace AS T JOIN area AS A
+                ON T.areaID = A.areaID
+                WHERE T.TravelPlaceID = ?`
+    const travelPlace = await dal.execute(sql, [travelPlaceID])[0]
+    console.log(travelPlace)
+    return travelPlace    
+}
+
 async function getAreaById(areaID:number): Promise<AreaModel> {
     const sql = "SELECT * FROM area WHERE areaID = ?"
     const area = await dal.execute(sql, [areaID])
@@ -50,9 +60,12 @@ async function deleteTravelPlace(travelPlaceId:number): Promise<void> {
     if(info.affectedRows === 0) throw new ResourceNotFoundErrorModel(travelPlaceId)    
     
 }
+
+
 export default {
     getAllTravelPlace,
     getAllArea,
+    getSpecificTravelPlace,
     getAreaById,
     getPlaceByAreaID,
     addTravelPlace,
