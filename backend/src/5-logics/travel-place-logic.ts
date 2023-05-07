@@ -4,10 +4,24 @@ import AreaModel from "../4-models/area-model";
 import TravelPlaceModel from "../4-models/travel-place-model";
 import { ResourceNotFoundErrorModel } from "../4-models/error-models";
 
+async function getAllTravelPlace(): Promise<TravelPlaceModel[]>{
+    const sql = `SELECT T.*, A.areaName
+                 FROM travelplace AS T JOIN area AS A
+                 ON T.areaID = A.areaID`
+    const travelPlace = await dal.execute(sql)
+    return travelPlace    
+}
+
 async function getAllArea(): Promise<AreaModel[]> {
     const sql = "SELECT * FROM area"
     const area = await dal.execute(sql)
     return area    
+}
+
+async function getAreaById(areaID:number): Promise<AreaModel> {
+    const sql = "SELECT * FROM area WHERE areaID = ?"
+    const area = await dal.execute(sql, [areaID])
+    return area[0]
 }
 
 async function getPlaceByAreaID(areaID:number): Promise<TravelPlaceModel[]> {
@@ -37,7 +51,9 @@ async function deleteTravelPlace(travelPlaceId:number): Promise<void> {
     
 }
 export default {
+    getAllTravelPlace,
     getAllArea,
+    getAreaById,
     getPlaceByAreaID,
     addTravelPlace,
     deleteTravelPlace

@@ -4,10 +4,33 @@ import TravelPlaceModel from '../4-models/travel-place-model'
 
 const router = express.Router()
 
+//Get all travel place
+router.get("/travel-place", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const travelPlace = await travelPlaceLogic.getAllTravelPlace()
+        response.json(travelPlace)
+    } 
+    catch (err: any) {
+        next(err)  
+    }
+})
+
 //Get all area
 router.get("/area", async (request: Request, response: Response, next: NextFunction)=>{
     try {
         const area = await travelPlaceLogic.getAllArea()
+        response.json(area)
+    } 
+    catch (err: any) {
+        next(err)  
+    }
+})
+
+//Get area by id
+router.get("/area/:areaID", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const areaID = +request.params.areaID
+        const area = await travelPlaceLogic.getAreaById(areaID)
         response.json(area)
     } 
     catch (err: any) {
