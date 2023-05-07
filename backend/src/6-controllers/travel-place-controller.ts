@@ -1,6 +1,8 @@
 import express, { NextFunction, Request, Response } from 'express'
 import travelPlaceLogic from '../5-logics/travel-place-logic'
 import TravelPlaceModel from '../4-models/travel-place-model'
+import fs from "fs";
+import path from 'path';
 
 const router = express.Router()
 
@@ -64,7 +66,8 @@ router.get("/travel-place-by-areaID/:areaID", async (request: Request, response:
 
 //Add travel place
 router.post("/travel-place", async (request: Request, response: Response, next: NextFunction)=>{
-    try {
+    try {        
+        request.body.image = request.body.files?.image
         const travelPlace = new TravelPlaceModel(request.body)
         const addedTravelPlace = await travelPlaceLogic.addTravelPlace(travelPlace)
         response.status(201).json(addedTravelPlace)
@@ -83,6 +86,19 @@ router.delete("/travel-place/:travelPlaceID", async (request: Request, response:
     } 
     catch (err: any) {
         next(err)  
+    }
+})
+
+//Serve the travel-place-image
+router.get("/travel-place/images/:travelPlaceID", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const travelPlaceID = +request.params.travelPlaceID
+        const imageName = await travelPlaceLogic.getImageNameByID(travelPlaceID)
+        const image = path.join(__dirname, "..", "1-assets", "images", imageName)
+        response.sendFile(image)        
+    }
+    catch (err: any) {
+        next(err)        
     }
 })
 
