@@ -26,6 +26,18 @@ router.get("/area", async (request: Request, response: Response, next: NextFunct
     }
 })
 
+//Get specific travel-place
+router.get("/travel-place/:travelPlaceID", async (request: Request, response: Response, next: NextFunction)=>{
+    try {
+        const travelPlaceID = +request.params.travelPlaceID
+        const travelPlace = await travelPlaceLogic.getSpecificTravelPlace(travelPlaceID)
+        response.json(travelPlace)
+    } 
+    catch (err: any) {
+        next(err)  
+    }
+})
+
 //Get area by id
 router.get("/area/:areaID", async (request: Request, response: Response, next: NextFunction)=>{
     try {

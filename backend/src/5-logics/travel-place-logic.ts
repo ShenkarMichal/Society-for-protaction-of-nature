@@ -23,9 +23,9 @@ async function getSpecificTravelPlace(travelPlaceID: number): Promise<TravelPlac
                 FROM travelplace AS T JOIN area AS A
                 ON T.areaID = A.areaID
                 WHERE T.TravelPlaceID = ?`
-    const travelPlace = await dal.execute(sql, [travelPlaceID])[0]
-    console.log(travelPlace)
-    return travelPlace    
+    const travelPlace = await dal.execute(sql, [travelPlaceID])
+    if(travelPlace.length === 0) throw new ResourceNotFoundErrorModel(travelPlaceID)
+    return travelPlace[0]
 }
 
 async function getAreaById(areaID:number): Promise<AreaModel> {
