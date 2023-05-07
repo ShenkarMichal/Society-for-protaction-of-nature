@@ -106,4 +106,6 @@ Tue Apr 25 2023 14:20:33 GMT+0300 (שעון ישראל (קיץ))
  Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
  ------------Sun May 07 2023 23:50:05 GMT+0300 (שעון ישראל (קיץ)) 
  Error: ER_BAD_NULL_ERROR: Column 'areaID' cannot be null 
+ ------------Mon May 08 2023 00:08:30 GMT+0300 (שעון ישראל (קיץ)) 
+ [object Object] 
  ------------
